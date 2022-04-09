@@ -81,7 +81,17 @@ hyperparameters : {"--n_estimators": 295, "--min_samples_leaf": 31, "--max_featu
 accuracy
 0.767
 
-*TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
+In the following image, we can see the `RunDetails` widget.
+
+![HyperDrive_RunDetails](screenshot/HyperDrive_RunDetails.JPG)
+
+In the following image, we can see the best model trained with it's parameters.
+
+![HyperDrive_Best_Model](screenshot/HyperDrive_Best_Model.JPG)
+
+In the following image, we can see that the `Hyper Drive` experiment has been completed.
+
+![HyperDrive_Experiment_Completed](screenshot/HyperDrive_Experiment_Completed.JPG)
 
 ## Model Deployment
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
