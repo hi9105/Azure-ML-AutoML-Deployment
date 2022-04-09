@@ -40,52 +40,52 @@ For accessing the data in the workspace, the data will be manually uploaded to A
 ![Datasets_Registered](screenshot/Datasets_Registered.JPG)
 
 ## Automated ML
-*TODO*: Give an overview of the `automl` settings and configuration you used for this experiment
+
+An overview of the `automl` settings used for this experiment :
+
+- `n_cross_validations` : Number of cross validation splits.
+- `primary_metric` : This is the metric that we want to optimize.
+- `experiment_timeout_hours` : Maximum amount of time in hours that all iterations combined can take before the experiment terminates.
+
+ An overview of the parameters for `AutoMLConfig` used for this experiment :
+ 
+ - `enable_early_stopping` : Flag to enble early termination if the score is not improving in the short term.
+ - `featurization` : 'auto' / 'off' Indicator for whether featurization step should be done automatically or not.
+ - `training_data` : Input dataset, containing both features and label column.
+ - `label_column_name` : The name of the label column.
+ - `task` : classification.
 
 ### Results
-*TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
 
-Algorithm name
-MaxAbsScaler, LogisticRegression
+Maximum accuracy for automated ML model : `85.3 %`
 
-Hyperparameters : 
+Best Algorithm name : MaxAbsScaler, LogisticRegression
 
-Data transformation:
-{
-    "class_name": "MaxAbsScaler",
-    "module": "sklearn.preprocessing",
-    "param_args": [],
-    "param_kwargs": {},
-    "prepared_kwargs": {},
-    "spec_class": "preproc"
-}
+Best parameters of the model :
 
-Training algorithm: :
-{
-    "class_name": "LogisticRegression",
-    "module": "sklearn.linear_model",
-    "param_args": [],
-    "param_kwargs": {
-        "C": 1.7575106248547894,
-        "class_weight": null,
-        "multi_class": "multinomial",
-        "penalty": "l2",
-        "solver": "lbfgs"
-    },
-    "prepared_kwargs": {},
-    "spec_class": "sklearn"
-}
+- Data transformation : MaxAbsScaler.
+- Training algorithm: : LogisticRegression ("C": 1.76, "class_weight": null, "multi_class": "multinomial", "penalty": "l2", "solver": "lbfgs").
 
-Accuracy
-0.85333
+Improvements : 
+
+- may be more parameters for `automl` settings could have been used so that it may increase accuracy.
+- may be more parameters for `AutoMLConfig` could have been used so that it may increase accuracy.
 
 In the following image, we can see the `RunDetails` widget.
 
 ![Automl_RunDetails](screenshot/Automl_RunDetails.JPG)
 
-In the following image, we can see the best model trained with it's parameters.
+In the following image, we can see the `Best model` summary.
+
+![Automl_Best_Model](screenshot/Automl_Best_Model.JPG)
+
+In the following image, we can see the `Best model` trained with it's parameters.
 
 ![Automl_Best_Model_Details_Run_Id](screenshot/Automl_Best_Model_Details_Run_Id.JPG)
+
+In the following image, we can see the `Feature importance` explanation.
+
+![Automl_Explanations](screenshot/Automl_Explanations.JPG)
 
 ## Hyperparameter Tuning
 
@@ -107,7 +107,7 @@ Parameters ranges used for the hyperparameter search :
 
 ### Results
 
-Maximum accuracy : 76.7 %
+Maximum accuracy : `76.7 %`
 
 Best parameters of the model : 
 
@@ -135,11 +135,25 @@ In the following image, we can see that the `HyperDrive` experiment has been com
 
 ## Model Deployment
 
-An overview of the deployed model and 
+An overview of the deployed model :
+
+- 
 
 Instructions on how to query the endpoint with a sample input :
 
 - 
+
+In the following image, we can see that the `Best model deployment` has been successful.
+
+![Automl_Best_Model_Deloyed](screenshot/Automl_Best_Model_Deloyed.JPG)
+
+In the following image, we can see the `Real-time endpoints` overview.
+
+![Automl_Endpoint](screenshot/Automl_Endpoint.JPG)
+
+In the following image, we can see the `Deployment status` of the real-time endpoint.
+
+![Automl_Model_Endpoint_Active](screenshot/Automl_Model_Endpoint_Active.JPG)
 
 ## Screen Recording
 
