@@ -137,11 +137,20 @@ In the following image, we can see that the `HyperDrive` experiment has been com
 
 An overview of the deployed model :
 
-- 
+The best model from AutoML will be deployed as it's accuracy is greater than accuracy of best model from HyperDrive. Requirements for deploying a model :
+
+- `Entry script` : it receives data submitted to a deployed web service and passes it to the model. It then returns the model's response to the client.
+- `Environment` : A conda environment specification file.
+- `Inference configuration` : describes the Docker container and files to use when initializing web service.
+- `Deployment configuration` : specifies the amount of memory and cores webservice needs in order to run.
 
 Instructions on how to query the endpoint with a sample input :
 
-- 
+```
+function test() {
+  console.log("notice the blank line before this function?");
+}
+```
 
 In the following image, we can see that the `Best model deployment` has been successful.
 
