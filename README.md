@@ -1,17 +1,17 @@
-# Your Project Title Here
+# Azure Machine Learning - Heart Failure Prediction
 
-*TODO:* Write a short introduction to your project.
-
-## Project Set Up and Installation
-*OPTIONAL:* If your project has any special installation steps, this is where you should put it. To turn this project into a professional portfolio project, you are encouraged to explain how to set up this project in AzureML.
+Cardiovascular disease are the number one cause of the death around the world, taking an estimation of around 20 million lives each year, which accounts for around 45% of all deaths worldwide. Somehow, most of the cardiovascular disease could be prevented by addressing behavioral risk factors to population-wide strategies. This project is aiming to utilize Azure Machine Learning to detect the most crucial features to predict the heart failure event.
 
 ## Dataset
 
 ### Overview
-*TODO*: Explain about the data you are using and where you got it from.
+*TODO*: Explain about the data you are using.
+
+The dataset can be downloaded from Kaggle : https://www.kaggle.com/datasets/andrewmvd/heart-failure-clinical-data
 
 ### Task
 *TODO*: Explain the task you are going to be solving with this dataset and the features you will be using for it.
+Suppose a bank has to approve a small loan amount for a customer and the bank needs to make a decision quickly. The bank checks the person’s credit history and their financial condition and finds that they haven’t re-paid the older loan yet. Hence, the bank rejects the application.
 
 ### Access
 *TODO*: Explain how you are accessing the data in your workspace.
@@ -65,37 +65,48 @@ In the following image, we can see the best model trained with it's parameters.
 ![Automl_Best_Model_Details_Run_Id](screenshot/Automl_Best_Model_Details_Run_Id.JPG)
 
 ## Hyperparameter Tuning
-*TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
+
+Model chosen for this experiment : `RandomForestClassifier`. It combines the output of multiple (randomly created) Decision Trees to generate the final output. It leverages the power of multiple decision trees. It does not rely on the feature importance given by a single decision tree.
 
 An overview of the types of parameters used for the hyperparameter search :
+
 - n_estimatorsint : The number of trees in the forest.
 - min_samples_leaf : The minimum number of samples required to be at a leaf node.
 - max_features : The number of features to consider when looking for the best split.
 - oob_score : Whether to use out-of-bag samples to estimate the generalization score.
 
 Parameters ranges used for the hyperparameter search :
-- '--n_estimators': range(10, 500).
-- '--min_samples_leaf': range(10, 500).
-- '--max_features': sqrt, log2.
-- '--oob_score': True, False.
+
+- `--n_estimators`: range(10, 500).
+- `--min_samples_leaf`: range(10, 500).
+- `--max_features`: sqrt, log2.
+- `--oob_score`: True, False.
 
 ### Results
-*TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
 
-hyperparameters : {"--n_estimators": 295, "--min_samples_leaf": 31, "--max_features": "sqrt", "--oob_score": "False"}
+Maximum accuracy : 76.7 %
 
-accuracy
-0.767
+Best parameters of the model : 
+
+- n_estimators : 295.
+- min_samples_leaf : 31.
+- max_features : sqrt.
+- oob_score : False.
+
+Improvements : 
+
+- may be more parameters could have been used so that it may increase accuracy.
+- may be the parameters range could be increased or decreased or extend so that it may increase accuracy.
 
 In the following image, we can see the `RunDetails` widget.
 
 ![HyperDrive_RunDetails](screenshot/HyperDrive_RunDetails.JPG)
 
-In the following image, we can see the best model trained with it's parameters.
+In the following image, we can see the `Best model` trained with it's parameters.
 
 ![HyperDrive_Best_Model](screenshot/HyperDrive_Best_Model.JPG)
 
-In the following image, we can see that the `Hyper Drive` experiment has been completed.
+In the following image, we can see that the `HyperDrive` experiment has been completed.
 
 ![HyperDrive_Experiment_Completed](screenshot/HyperDrive_Experiment_Completed.JPG)
 
