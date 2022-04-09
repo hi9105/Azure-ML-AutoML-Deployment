@@ -143,13 +143,29 @@ The best model from AutoML will be deployed as it's accuracy is greater than acc
 - `Environment` : A conda environment specification file.
 - `Inference configuration` : describes the Docker container and files to use when initializing web service.
 - `Deployment configuration` : specifies the amount of memory and cores webservice needs in order to run.
+- `Compute target` : use to host the model. We will be using Azure Container Instances.
 
 Instructions on how to query the endpoint with a sample input :
 
 ```
-function test() {
-  console.log("notice the blank line before this function?");
+service = Webservice(workspace=ws, name="myservice")
+
+# If the service is authenticated, set the key or token
+key, _ = service.get_keys()
+
+# Set the appropriate headers
+headers = {"Content-Type": "application/json"}
+headers["Authorization"] = f"Bearer {key}"
+
+# Make the request and display the response and logs
+data = {
+    "query": "What color is the fox",
+    "context": "The quick brown fox jumped over the lazy dog.",
 }
+data = json.dumps(data)
+
+response = requests.post(service.scoring_uri, data=data, headers=headers)
+print(response.json())
 ```
 
 In the following image, we can see that the `Best model deployment` has been successful.
