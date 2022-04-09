@@ -1,5 +1,3 @@
-*NOTE:* This file is a template that you can use to create the README for your project. The *TODO* comments below will highlight the information you should be sure to include.
-
 # Your Project Title Here
 
 *TODO:* Write a short introduction to your project.
@@ -69,10 +67,18 @@ In the following image, we can see the best model trained with it's parameters.
 ## Hyperparameter Tuning
 *TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
 
-"--n_estimators":["choice",
-"--min_samples_leaf":["choice",
-"--max_features":["choice",[["sqrt","log2"]]],
-"--oob_score":["choice",[["True","False"]]]}
+An overview of the types of parameters used for the hyperparameter search :
+- n_estimatorsint : The number of trees in the forest.
+- min_samples_leaf : The minimum number of samples required to be at a leaf node.
+- max_features : The number of features to consider when looking for the best split.
+- oob_score : Whether to use out-of-bag samples to estimate the generalization score.
+
+Parameters ranges used for the hyperparameter search :
+- '--n_estimators': range(10, 500).
+- '--min_samples_leaf': range(10, 500).
+- '--max_features': sqrt, log2.
+- '--oob_score': True, False.
+
 ### Results
 *TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
 
