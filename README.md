@@ -58,7 +58,13 @@ Training algorithm: :
 Accuracy
 0.85333
 
-*TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
+In the following image, we can see the `RunDetails` widget.
+
+![Automl_RunDetails](screenshot/Automl_RunDetails.JPG)
+
+In the following image, we can see the best model trained with it's parameters.
+
+![Automl_Best_Model_Details_Run_Id](screenshot/Automl_Best_Model_Details_Run_Id.JPG)
 
 ## Hyperparameter Tuning
 *TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
