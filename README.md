@@ -1,20 +1,43 @@
 # Azure Machine Learning - Heart Failure Prediction
 
-Cardiovascular disease are the number one cause of the death around the world, taking an estimation of around 20 million lives each year, which accounts for around 45% of all deaths worldwide. Somehow, most of the cardiovascular disease could be prevented by addressing behavioral risk factors to population-wide strategies. This project is aiming to utilize Azure Machine Learning to detect the most crucial features to predict the heart failure event.
+Cardiovascular disease are the number one cause of the death around the world, taking an estimation of around 20 million lives each year, which accounts for around 45% of all deaths worldwide. This project is aiming to utilize Azure Machine Learning to detect the most crucial features to predict the heart failure event.
 
 ## Dataset
 
 ### Overview
-*TODO*: Explain about the data you are using.
+
+Heart failure is a common event caused by CVDs and this dataset contains 12 features that can be used to predict mortality by heart failure.
+
+Somehow most of the cardiovascular diseases could be prevented by addressing behavioural risk factors such as tobacco use, unhealthy diet and obesity, physical inactivity and harmful use of alcohol using population-wide strategies.
+
+People with cardiovascular disease or who are at high cardiovascular risk (due to the presence of one or more risk factors such as hypertension, diabetes, hyperlipidaemia or already established disease) need early detection and management wherein a machine learning model can be of great help.
 
 The dataset can be downloaded from Kaggle : https://www.kaggle.com/datasets/andrewmvd/heart-failure-clinical-data
 
 ### Task
-*TODO*: Explain the task you are going to be solving with this dataset and the features you will be using for it.
-Suppose a bank has to approve a small loan amount for a customer and the bank needs to make a decision quickly. The bank checks the person’s credit history and their financial condition and finds that they haven’t re-paid the older loan yet. Hence, the bank rejects the application.
+
+The task that we are going to be solving with this dataset is to predict `Death Event`.
+
+We will be using all the features that are provided in the dataset. There are in total following features :
+
+- age
+- anaemia
+- creatinine_phosphokinase
+- diabetes
+- ejection_fraction
+- high_blood_pressure
+- platelets
+- serum_creatinine
+- serum_sodium
+- sex
+- smoking
+- time
 
 ### Access
-*TODO*: Explain how you are accessing the data in your workspace.
+
+For accessing the data in the workspace, the data will be manually uploaded to Azure dataset and will be registered there. Then the data can be easily access in the workspace. In the following image we can see that dataset is registered :
+
+![Datasets_Registered](screenshot/Datasets_Registered.JPG)
 
 ## Automated ML
 *TODO*: Give an overview of the `automl` settings and configuration you used for this experiment
@@ -111,16 +134,19 @@ In the following image, we can see that the `HyperDrive` experiment has been com
 ![HyperDrive_Experiment_Completed](screenshot/HyperDrive_Experiment_Completed.JPG)
 
 ## Model Deployment
-*TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
+
+An overview of the deployed model and 
+
+Instructions on how to query the endpoint with a sample input :
+
+- 
 
 ## Screen Recording
 
-https://youtu.be/upywb52hH5E
+Link to a screen recording of the project in action : https://youtu.be/upywb52hH5E
 
-*TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
+The screencast demonstrate:
+
 - A working model
 - Demo of the deployed  model
 - Demo of a sample request sent to the endpoint and its response
-
-## Standout Suggestions
-*TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
